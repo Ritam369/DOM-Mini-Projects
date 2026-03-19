@@ -1,0 +1,122 @@
+:root {
+	--bg-main: #1a1a1a;
+	--bg-surface: #2d2d2d;
+	--bg-card: #2a2a2a;
+	--bg-elevated: #1e1e1e;
+	--border: #3a3a3a;
+	--accent: #cf4a0a;
+	--accent-hover: #ff6b35;
+	--text-primary: #f5f5f5;
+	--text-secondary: #cfcfcf;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	background: radial-gradient(circle at top, var(--bg-surface), var(--bg-main));
+	color: var(--text-primary);
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+	width: min(92vw, 460px);
+	background: linear-gradient(180deg, var(--bg-card), var(--bg-elevated));
+	border: 1px solid var(--border);
+	border-radius: 16px;
+	padding: 24px;
+	box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+}
+
+#heading{
+    margin-bottom: 50px;
+}
+
+.input-field {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 18px;
+}
+
+#input {
+	flex: 1;
+	height: 44px;
+	padding: 0 14px;
+	border: 1px solid var(--border);
+	border-radius: 10px;
+	background: var(--bg-surface);
+	color: var(--text-primary);
+	outline: none;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#input::placeholder {
+	color: #9f9f9f;
+}
+
+#input:focus {
+	border-color: var(--accent-hover);
+	box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
+}
+
+#searchBtn {
+	border: none;
+	border-radius: 10px;
+	padding: 0 16px;
+	background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+	color: #ffffff;
+	font-weight: 600;
+	cursor: pointer;
+	transition: transform 0.18s ease, filter 0.2s ease;
+}
+
+#searchBtn:hover {
+	filter: brightness(1.07);
+	transform: translateY(-1px);
+}
+
+#searchBtn:active {
+	transform: translateY(0);
+}
+
+#weatherInfo {
+	min-height: 110px;
+	background: var(--bg-surface);
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	padding: 16px;
+	color: var(--text-secondary);
+}
+
+#weatherInfo h2 {
+	color: var(--text-primary);
+	margin-bottom: 12px;
+	font-size: 1.45rem;
+}
+
+#weatherInfo p {
+	margin: 8px 0;
+	line-height: 1.45;
+}
+
+@media (max-width: 480px) {
+	.container {
+		padding: 18px;
+	}
+
+	.input-field {
+		flex-direction: column;
+	}
+
+	#searchBtn {
+		height: 42px;
+	}
+}
